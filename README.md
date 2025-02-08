@@ -43,14 +43,14 @@ cd solana-arbitrage-bot
 修改 `Cargo.toml`，添加 Solana 相关依赖：
 ```toml
 [dependencies]
-solana-client = "1.18"
-solana-sdk = "1.18"
+solana-client = "2.1.13"
+solana-sdk = "2.1.13"
 tokio = { version = "1", features = ["full"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 dotenv = "0.15"
 log = "0.4"
-env_logger = "0.10"
+env_logger = "0.11.6"
 ```
 如果要用 WebSocket 监听链上数据：
 ```toml
