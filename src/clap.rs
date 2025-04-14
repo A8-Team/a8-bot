@@ -1,17 +1,16 @@
-use clap::{Parser, ValueEnum};
+pub use clap::{Parser, ValueEnum};
 use solana_sdk::commitment_config::CommitmentLevel;
 use yellowstone_grpc_client::{GeyserGrpcBuilder, GeyserGrpcClient, Interceptor};
-use anyhow::Context;
 
 #[derive(Debug, Clone, Parser)]
 #[clap(author, version, about)]
-struct Args {
+pub struct Args {
     #[clap(short, long, default_value_t = String::from("http://127.0.0.1:10000"))]
     pub grpc_endpoint: String,
 
     #[clap(long)]
     pub commitment: Option<ArgsCommitment>,
-    
+
     // 最大解码消息大小，完整的块可能会特别大，单位是B，默认值是1GB
     #[clap(long, default_value_t = 1024*1024*1024)]
     max_decoding_message_size: usize,
