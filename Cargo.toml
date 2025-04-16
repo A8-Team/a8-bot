@@ -4,6 +4,10 @@ version = "0.0.1"
 edition = "2021"
 authors = ["Jayce"]
 
+[[bin]]
+name = "a8ctl"
+path = "src/main.rs"
+
 [dependencies]
 tokio = { version = "1.43.0", features = ["full"] }
 serde = { version = "1", features = ["derive"] }
